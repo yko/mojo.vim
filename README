@@ -8,4 +8,4 @@ possible configuration:
 for highligh templates in __DATA__,
 save this file into ~/.vim/syntax and add following line to your .vimrc:
 
-autocmd FileType perl syn include @perlDATA syntax/MojoTemplate.vim
+autocmd FileType perl syn include @perlDATA syntax/MojoliciousTemplate.vim
