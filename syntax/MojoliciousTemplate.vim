@@ -2,10 +2,12 @@
 " Language:    Mojo epl templats stored in  Perl __DATA__ 
 " By Yaroslav Korhsak <ykorshak@gmail.com>
 "
+" Thanks to Viacheslav Tykhanovskyi for simplified region syntax
+"
 " possible configuration:
 "  let mojo_disable_html = 1
-
-" for highligh templates in __DATA__, 
+"
+" For highligh templates in __DATA__, 
 " save this file into ~/.vim/syntax and add following line to your .vimrc:
 " autocmd FileType perl syn include @perlDATA syntax/MojoTemplate.vim
 
