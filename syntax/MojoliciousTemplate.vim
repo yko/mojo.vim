@@ -48,6 +48,9 @@ syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart co
 syntax region MojoPerlCode start="<%=\?"hs=e+1 end="%>"hs=s-1 contains=@Perl,@Mojo oneline contained keepend
 syntax region MojoPerlCode start="^%=\?"hs=e+1 end="$" contains=@Perl,@Mojo oneline contained keepend
 
+" Displaying MojoPerlCode in quotes and double-cuotes
+" Thanx to Aaron Hope, aspperl.vim maintainer
+syn cluster htmlPreproc add=MojoPerlCode
 
 if version >= 508 || !exists("did_a65_syntax_inits")
   if version < 508
