@@ -5,7 +5,12 @@ finish
 endif
 
 if !exists("main_syntax")
-let main_syntax = 'perlscript'
+    let main_syntax = 'perlscript'
+endif
+
+if exists("perl_fold") 
+    bfold = perl_fold
+    unlet perl_fold
 endif
 
 if version < 600
@@ -50,3 +55,8 @@ endif
 
 
 let b:current_syntax = "epl"
+if exists("bfold") 
+    perl_fold = bfold
+    unlet bfold
+endif
+
