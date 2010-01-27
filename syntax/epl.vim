@@ -16,7 +16,7 @@ if !exists("main_syntax")
 endif
 
 if exists("perl_fold") 
-    bfold = perl_fold
+   let bfold = perl_fold
     unlet perl_fold
 endif
 
