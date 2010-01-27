@@ -1,8 +1,8 @@
 Syntax file (for include only)
-Language:    Mojo epl templats stored in  Perl __DATA__
+Language:    Mojo epl/ep templats stored in  Perl __DATA__
 By Yaroslav Korhsak <ykorshak@gmail.com>
 
-For highligh ep/epl templates in __DATA__ and *.html.epl files,
+For highligh ep/epl templates in __DATA__ and *.html.ep/epl files,
 save this fils into ~/.vim/ and add following line to your .vimrc:
 
 " Enables __DATA__ highlighting for perl files
