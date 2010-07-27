@@ -1,7 +1,8 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
 " Maintainer:  korshak <ykorshak@gmail.com>
-" Last Change: 2010 Jan 27
+" Version:     0.0.3
+" Last Change: 2010 Jul 27
 " Location:    http://github.com/korshak/Vim-Mojo-Data-syntax
 " Original version: vti <vti@cpan.org>
 
