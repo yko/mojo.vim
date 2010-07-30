@@ -1,6 +1,10 @@
 " Vim syntax file (for including only)
-" Language:    Mojo epl templates stored in  Perl __DATA__ 
-" By Yaroslav Korhsak <ykorshak@gmail.com>
+" html w/ Perl as a preprocessor in __DATA__
+" Language:    Mojo epl templates stored in Perl __DATA__ 
+" Maintainer:  yko <ykorshak@gmail.com>
+" Version:     0.0.4
+" Last Change: 2010 Jul 30
+" Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
 "
@@ -20,12 +24,17 @@ endif
 let cs = b:current_syntax 
 unlet b:current_syntax
 
-let pf= perl_fold
-unlet perl_fold
+if exists("perl_fold") 
+   let bfold = perl_fold
+   unlet perl_fold
+endif
 
 syntax include @Perl syntax/perl.vim
 
-let perl_fold=pf
+if exists("bfold") 
+    perl_fold = bfold
+    unlet bfold
+endif
 
 if !exists("mojo_disable_html")
   unlet b:current_syntax
