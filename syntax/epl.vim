@@ -1,16 +1,16 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.0.5
-" Last Change: 2010 Aug 26
+" Version:     0.02_0
+" Last Change: 2010 Aug 19
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 " Original version: vti <vti@cpan.org>
 
-if version < 600
-syntax clear
-elseif exists("b:current_syntax")
-finish
-endif
+"if version < 600
+"syntax clear
+"elseif exists("b:current_syntax")
+"finish
+"endif
 
 if !exists("main_syntax")
     let main_syntax = 'perlscript'
@@ -22,10 +22,8 @@ if exists("perl_fold")
 endif
 
 if version < 600
-  so <sfile>:p:h/html.vim
   syn include @Perl <sfile>:p:h/perl.vim
 else
-  runtime! syntax/html.vim
   unlet b:current_syntax
   syn include @Perl syntax/perl.vim
 endif

@@ -2,8 +2,8 @@
 " html w/ Perl as a preprocessor in __DATA__
 " Language:    Mojo epl templates stored in Perl __DATA__ 
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.0.5
-" Last Change: 2010 Aug 26
+" Version:     0.02_0
+" Last Change: 2010 Aug 19
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
