@@ -1,8 +1,8 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.0.4
-" Last Change: 2010 Jul 27
+" Version:     0.0.5
+" Last Change: 2010 Aug 26
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 " Original version: vti <vti@cpan.org>
 
@@ -40,6 +40,7 @@ syn match MojoStart "^%"  contained
 syn match MojoStart "^%="  contained 
 syn match MojoStart "^%=="  contained 
 syn match MojoEnd "%>" contained 
+syn match MojoEnd "=%>" contained 
 
 syn cluster Mojo contains=MojoStart,MojoEnd
 
