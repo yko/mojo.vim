@@ -2,7 +2,7 @@
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
 " Version:     0.02_0
-" Last Change: 2010 Aug 19
+" Last Change: 2010 Nov 14
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 " Original version: vti <vti@cpan.org>
 

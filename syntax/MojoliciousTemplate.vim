@@ -3,7 +3,7 @@
 " Language:    Mojo epl templates stored in Perl __DATA__ 
 " Maintainer:  yko <ykorshak@gmail.com>
 " Version:     0.02_0
-" Last Change: 2010 Aug 19
+" Last Change: 2010 Nov 14
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
@@ -13,11 +13,11 @@
 "
 " For highlight templates in __DATA__, 
 " save this file into ~/.vim/syntax and add following line to your .vimrc:
-" autocmd FileType perl syn include @perlDATA syntax/MojoTemplate.vim
+" autocmd FileType perl syn include @perlDATA syntax/MojoliciousTemplate.vim
 
 if !exists("b:current_syntax")
   echoerr "MojolisiousTemplate can only be included in existing syntax"
-  echoerr "Example: autocmd FileType perl syn include @perlDATA syntax/MojoTemplate.vim"
+  echoerr "Example: autocmd FileType perl syn include @perlDATA syntax/MojoliciousTemplate.vim"
   finish
 endif
 
