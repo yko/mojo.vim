@@ -1,8 +1,8 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.02_0
-" Last Change: 2010 Nov 14
+" Version:     0.02_1
+" Last Change: 2010 Dec 16
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 " Original version: vti <vti@cpan.org>
 
@@ -34,16 +34,16 @@ syn match MojoStart "<%" contained
 syn match MojoStart "<%=" contained 
 syn match MojoStart "<%==" contained 
 syn match MojoStart "<%{=" contained 
-syn match MojoStart "^%"  contained 
-syn match MojoStart "^%="  contained 
-syn match MojoStart "^%=="  contained 
+syn match MojoStart "^\s*%"  contained 
+syn match MojoStart "^\s*%="  contained 
+syn match MojoStart "^\s*%=="  contained 
 syn match MojoEnd "%>" contained 
 syn match MojoEnd "=%>" contained 
 
 syn cluster Mojo contains=MojoStart,MojoEnd
 
 syn region  PerlInside keepend oneline start=+<%=\?+hs=s skip=+".*%>.*"+ end=+%>+ contains=@Mojo,@Perl
-syn region  PerlInside keepend oneline start=+^%=\?+hs=s end=+$+ contains=@Mojo,@Perl
+syn region  PerlInside keepend oneline start=+^\s*%=\?+hs=s end=+$+ contains=@Mojo,@Perl
 
 
 if version >= 508 || !exists("did_epl_syn_inits")

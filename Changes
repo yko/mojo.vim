@@ -1,5 +1,8 @@
 Revision history for mojo.vim
 
+0.02_1   Thu Dec 16 12:17:09 2010
+         Match new indented syntax
+
 0.02_0   Thu Aug 19 13:37:50 2010
          Switched to include mode
          Switched to dotted ft mode

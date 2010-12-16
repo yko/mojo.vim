@@ -2,8 +2,8 @@
 " html w/ Perl as a preprocessor in __DATA__
 " Language:    Mojo epl templates stored in Perl __DATA__ 
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.02_0
-" Last Change: 2010 Nov 14
+" Version:     0.02_1
+" Last Change: 2010 Dec 16
 " Location:    http://github.com/yko/Vim-Mojo-Data-syntax
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
@@ -45,9 +45,9 @@ syn match MojoStart "<%" contained
 syn match MojoStart "<%=" contained 
 syn match MojoStart "<%==" contained 
 syn match MojoStart "<%{=" contained 
-syn match MojoStart "^%"  contained 
-syn match MojoStart "^%="  contained 
-syn match MojoStart "^%=="  contained 
+syn match MojoStart "^\s*%"  contained 
+syn match MojoStart "^\s*%="  contained 
+syn match MojoStart "^\s*%=="  contained 
 syn match MojoEnd "%>" contained 
 syn match MojoEnd "=%>" contained 
 
@@ -57,7 +57,7 @@ syn cluster Mojo contains=MojoStart,MojoEnd
 syn region MojoFileContainer start=/@@/ end=/@@/me=s-1 contains=MojoPerlCode,@Html,MojoFileName keepend  fold
 syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart contained keepend
 syn region MojoPerlCode keepend oneline contained start=+<%=\?+hs=s skip=+".*%>.*"+ end=+%>+ contains=@Mojo,@Perl
-syn region MojoPerlCode keepend oneline contained start=+^%=\?+hs=s end=+$+ contains=@Mojo,@Perl
+syn region MojoPerlCode keepend oneline contained start=+^\s*%=\?+hs=s end=+$+ contains=@Mojo,@Perl
 
 " Displaying MojoPerlCode in quotes and double-cuotes
 " Thanx to Aaron Hope, aspperl.vim maintainer
