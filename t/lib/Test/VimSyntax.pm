@@ -39,6 +39,7 @@ sub syntax_ok {
 
       SKIP: {
             unless ($matched) {
+                diag "Output was " . highlighter->xml;
                 skip "Returned elements "
                   . scalar(@$children)
                   . " did not matched passed array "
