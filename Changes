@@ -1,6 +1,7 @@
 Revision history for mojo.vim
 
 0.02_2   Sat Dec 25 12:12:43 2010
+         Syntax now have tests!
          Cleanup
          Fixed perl.vim strangeness
          Add makefile
