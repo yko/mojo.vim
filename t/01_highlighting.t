@@ -5,7 +5,7 @@ use File::Spec::Functions qw<catfile catdir>;
 
 use Test::VimSyntax;
 
-plan tests => 7;
+plan tests => 8;
 
 use FindBin;
 
@@ -36,6 +36,25 @@ syntax_ok(
         ['identifier', '>'],
     ],
     'Simple html'
+);
+
+syntax_ok(
+    '<a href="<%= 1 %>"></a>',
+    [   ['identifier',   '<'],
+        ['statement',    'a'],
+        ['identifier',    ''],
+        ['type',      'href'],
+        ['identifier',   '='],
+        ['constant',     '"'],
+        ['type',       '<%='],
+        ['constant',     '1'],
+        ['type',        '%>'],
+        ['constant',     '"'],
+        ['identifier', '></'],
+        ['statement',   'a'],
+        ['identifier',  '>'],
+    ],
+    'Perl inside of attribute value'
 );
 
 syntax_ok(
