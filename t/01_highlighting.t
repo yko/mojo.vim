@@ -5,7 +5,7 @@ use File::Spec::Functions qw<catfile catdir>;
 
 use Test::VimSyntax;
 
-plan tests => 6;
+plan tests => 7;
 
 use FindBin;
 
@@ -87,7 +87,7 @@ syntax_ok(
 
 syntax_ok(
     "  \%=  print(1);\n<b>",
-    [   ['type',       '%='],
+    [   ['type',       '  %='],
         ['statement',  'print'],
         ['constant',   '1'],
         ['identifier', '<'],
@@ -95,4 +95,15 @@ syntax_ok(
         ['identifier', '>']
     ],
     'Intdented perl code'
+);
+
+syntax_ok(
+    "\%= if (1) { print 1 };",
+    [   ['type',       '%='],
+        ['statement',  'if'],
+        ['constant',   '1'],
+        ['statement',  'print'],
+        ['constant',   '1'],
+    ],
+    'Conditional block'
 );
