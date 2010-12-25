@@ -5,23 +5,25 @@ By yko <ykorshak@gmail.com>
 DESCRIPTION
 
 Syntax file for highlighting embedded Perl code in Mojo templates.
-Designed to highlight syntax of both html.ep and html.epl formats.
+Designed to highlight syntax of both .html.ep and .html.epl formats.
+Also you can allow syntax highliting for __DATA__ section of Perl files.
 
 INSTALLATION
 
-        make test
-        make install
+    make test
+    make install
 
 CONFIGURATION
 
 Configurations variables:
 
+    :let mojo_highlight_data = 1
+
+Highlight embedded Perl code in __DATA__ sections of your Perl files.
+    
     :let mojo_disable_html = 1
 
-For highlight embedded Perl code in __DATA__ sections of your Perl files,
-add following line to your .vimrc:
-
-    autocmd FileType perl syn include @perlDATA syntax/MojoliciousTemplate.vim
+Don't highlight html inside __DATA__ templates - Perl code only.
 
 CREDITS
 

@@ -1,5 +1,9 @@
 Revision history for mojo.vim
 
+0.03_0   Sat Dec 25 18:22:10 2010
+         Better configuration: only variables in .vimrc
+         General cleanup
+
 0.02_2   Sat Dec 25 12:12:43 2010
          Syntax now have tests!
          Cleanup

@@ -1,61 +1,48 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
-" version:     0.02_2
+" version:     0.03
 " Last Change: 2010 Dec 25
 " Location:    http://github.com/yko/mojo.vim
 " Original version: vti <vti@cpan.org>
 
-"if version < 600
-"syntax clear
-"elseif exists("b:current_syntax")
-"finish
-"endif
-
-if !exists("main_syntax")
-    let main_syntax = 'perlscript'
-endif
-
-if exists("perl_fold") 
-   let bfold = perl_fold
+if exists("perl_fold")
+   let b:bfold = perl_fold
    unlet perl_fold
 endif
 
-if version < 600
-  syn include @Perl <sfile>:p:h/perl.vim
-else
-  unlet! b:current_syntax
-  syn include @Perl syntax/perl.vim
-endif
+" Clear previous syntax name
+unlet! b:current_syntax
 
+" Include Perl syntax intp @Perl cluster
+syntax include @Perl syntax/perl.vim
+
+" This groups are broken when included
 syn cluster Perl remove=perlFunctionName,perlElseIfError
 
-syn match MojoStart /<%=\{0,2}/ contained 
-syn match MojoStart /^\s*%=\{0,2}/  contained 
-syn match MojoEnd /=\{0,1}%>/ contained 
+if exists("b:bfold")
+    perl_fold = b:bfold
+    unlet b:bfold
+endif
+
+" Begin and end of code blocks
+syn match MojoStart /<%=\{0,2}/ contained
+syn match MojoStart /^\s*%=\{0,2}/  contained
+syn match MojoEnd /=\{0,1}%>/ contained
 
 syn cluster Mojo contains=MojoStart,MojoEnd
 
+" Highlight code blocks
 syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
 syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
 
-if version >= 508 || !exists("did_epl_syn_inits")
-  if version < 508
-    let did_epl_syn_inits = 1
-    command -nargs=+ HiLink hi link <args>
-  else
-    command -nargs=+ HiLink hi def link <args>
-  endif
+command -nargs=+ HiLink hi def link <args>
 
-  HiLink MojoStart perlType
-  HiLink MojoEnd perlType
+HiLink MojoStart perlType
+HiLink MojoEnd perlType
+HiLink MojoFileName perlString
+HiLink MojoFileNameStart perlSpecial
 
-  delcommand HiLink
-endif
+delcommand HiLink
 
-let b:current_syntax = "epl"
-
-if exists("bfold") 
-    perl_fold = bfold
-    unlet bfold
-endif
+let b:current_syntax = "html.epl"
