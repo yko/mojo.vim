@@ -11,12 +11,12 @@ dirs:
 install: dirs
 	cp ftdetect/epl.vim  $(FTDETECT)
 	cp syntax/epl.vim    $(SYNTAX)
-	cp syntax/MojoliciousTemplate.vim    $(SYNTAX)
+	cp syntax/MojoliciousLite.vim    $(SYNTAX)
 
 symlinks: dirs
 	ln -sf $(PWD)/ftdetect/epl.vim  $(FTPLUGIN)
 	ln -sf $(PWD)/syntax/epl.vim    $(SYNTAX)
-	ln -sf $(PWD)/syntax/MojoliciousTemplate.vim    $(SYNTAX)
+	ln -sf $(PWD)/syntax/MojoliciousLite.vim    $(SYNTAX)
 
 test:
 	prove -rv t
