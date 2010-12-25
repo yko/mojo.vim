@@ -22,6 +22,8 @@ sub highlighter {
 sub syntax_ok {
     my ($string, $elem, $name) = @_;
 
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
+
     highlighter->syntax_mark_string($string);
     my $out = '';
     subtest $name => sub {
