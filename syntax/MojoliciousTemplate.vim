@@ -38,9 +38,5 @@ syn match MojoFileNameStart "@@" contained
 syn region MojoFileContainer start=/@@/ end=/@@/me=s-1 contains=@Epl,@Html,MojoFileName keepend fold
 syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart contained keepend
 
-" Display code blocks in tag parameters' quoted value like 
-" <a href="<%= url_for 'foo' %>'>
-syn cluster htmlPreproc add=@Epl
-
 " Revert current syntax name
 let b:current_syntax = cs

@@ -36,6 +36,10 @@ syn cluster Mojo contains=MojoStart,MojoEnd
 syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
 syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
 
+" Display code blocks in tag parameters' quoted value like 
+" <a href="<%= url_for 'foo' %>'>
+syn cluster htmlPreproc add=PerlInside
+
 command -nargs=+ HiLink hi def link <args>
 
 HiLink MojoStart perlType
