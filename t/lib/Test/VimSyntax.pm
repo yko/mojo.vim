@@ -51,7 +51,7 @@ sub syntax_ok {
                     'syn:' . $el->[0],
                     'Syntax name "' . $el->[0] . '"'
                 );
-                is($c->text, $el->[1], 'Text matched');
+                is($c->text, $el->[1], 'Text "' . $c->text . '" matched');
             }
         }
 
