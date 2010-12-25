@@ -85,17 +85,14 @@ syntax_ok(
     'Just a perl code'
 );
 
-TODO: {
-    local $Test::VimSyntax::TODO = "Don't match indent";
-    syntax_ok(
-        "  \%=  print(1);\n<b>",
-        [   ['type',       '%='],
-            ['statement',  'print'],
-            ['constant',   '1'],
-            ['identifier', '<'],
-            ['statement',  'b'],
-            ['identifier', '>']
-        ],
-        'Intdented perl code'
-    );
-};
+syntax_ok(
+    "  \%=  print(1);\n<b>",
+    [   ['type',       '%='],
+        ['statement',  'print'],
+        ['constant',   '1'],
+        ['identifier', '<'],
+        ['statement',  'b'],
+        ['identifier', '>']
+    ],
+    'Intdented perl code'
+);
