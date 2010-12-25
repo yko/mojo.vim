@@ -28,6 +28,8 @@ else
   syn include @Perl syntax/perl.vim
 endif
 
+syn cluster Perl remove=perlFunctionName,perlElseIfError
+
 syn match MojoStart /<%=\{0,2}/ contained 
 syn match MojoStart /^\s*%=\{0,2}/  contained 
 syn match MojoEnd /=\{0,1}%>/ contained 
