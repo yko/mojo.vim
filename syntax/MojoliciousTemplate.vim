@@ -2,9 +2,9 @@
 " html w/ Perl as a preprocessor in __DATA__
 " Language:    Mojo epl templates stored in Perl __DATA__ 
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.02_1
-" Last Change: 2010 Dec 16
-" Location:    http://github.com/yko/Vim-Mojo-Data-syntax
+" Version:     0.02_2
+" Last Change: 2010 Dec 25
+" Location:    http://github.com/yko/mojo.vim
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
 "
@@ -37,27 +37,21 @@ if exists("bfold")
 endif
 
 if !exists("mojo_disable_html")
-  unlet b:current_syntax
+  unlet! b:current_syntax
   syn include @Html syntax/html.vim
 endif
 
-syn match MojoStart "<%" contained 
-syn match MojoStart "<%=" contained 
-syn match MojoStart "<%==" contained 
-syn match MojoStart "<%{=" contained 
-syn match MojoStart "^\s*%"  contained 
-syn match MojoStart "^\s*%="  contained 
-syn match MojoStart "^\s*%=="  contained 
-syn match MojoEnd "%>" contained 
-syn match MojoEnd "=%>" contained 
+syn match MojoStart /<%=\{0,2}/ contained 
+syn match MojoStart /^\s*%=\{0,2}/  contained 
+syn match MojoEnd /=\{0,1}%>/ contained 
 
 syn match MojoFileNameStart "@@" contained
 syn cluster Mojo contains=MojoStart,MojoEnd
 
 syn region MojoFileContainer start=/@@/ end=/@@/me=s-1 contains=MojoPerlCode,@Html,MojoFileName keepend  fold
 syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart contained keepend
-syn region MojoPerlCode keepend oneline contained start=+<%=\?+hs=s skip=+".*%>.*"+ end=+%>+ contains=@Mojo,@Perl
-syn region MojoPerlCode keepend oneline contained start=+^\s*%=\?+hs=s end=+$+ contains=@Mojo,@Perl
+syn region MojoPerlCode keepend oneline contained start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
+syn region MojoPerlCode keepend oneline contained start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
 
 " Displaying MojoPerlCode in quotes and double-cuotes
 " Thanx to Aaron Hope, aspperl.vim maintainer

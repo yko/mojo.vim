@@ -1,9 +1,9 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.02_1
-" Last Change: 2010 Dec 16
-" Location:    http://github.com/yko/Vim-Mojo-Data-syntax
+" version:     0.02_2
+" Last Change: 2010 Dec 25
+" Location:    http://github.com/yko/mojo.vim
 " Original version: vti <vti@cpan.org>
 
 "if version < 600
@@ -18,33 +18,24 @@ endif
 
 if exists("perl_fold") 
    let bfold = perl_fold
-    unlet perl_fold
+   unlet perl_fold
 endif
 
 if version < 600
   syn include @Perl <sfile>:p:h/perl.vim
 else
-  unlet b:current_syntax
+  unlet! b:current_syntax
   syn include @Perl syntax/perl.vim
 endif
 
-syn cluster htmlPreproc add=PerlInside
-
-syn match MojoStart "<%" contained 
-syn match MojoStart "<%=" contained 
-syn match MojoStart "<%==" contained 
-syn match MojoStart "<%{=" contained 
-syn match MojoStart "^\s*%"  contained 
-syn match MojoStart "^\s*%="  contained 
-syn match MojoStart "^\s*%=="  contained 
-syn match MojoEnd "%>" contained 
-syn match MojoEnd "=%>" contained 
+syn match MojoStart /<%=\{0,2}/ contained 
+syn match MojoStart /^\s*%=\{0,2}/  contained 
+syn match MojoEnd /=\{0,1}%>/ contained 
 
 syn cluster Mojo contains=MojoStart,MojoEnd
 
-syn region  PerlInside keepend oneline start=+<%=\?+hs=s skip=+".*%>.*"+ end=+%>+ contains=@Mojo,@Perl
-syn region  PerlInside keepend oneline start=+^\s*%=\?+hs=s end=+$+ contains=@Mojo,@Perl
-
+syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
+syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
 
 if version >= 508 || !exists("did_epl_syn_inits")
   if version < 508
@@ -60,10 +51,9 @@ if version >= 508 || !exists("did_epl_syn_inits")
   delcommand HiLink
 endif
 
-
 let b:current_syntax = "epl"
+
 if exists("bfold") 
     perl_fold = bfold
     unlet bfold
 endif
-
