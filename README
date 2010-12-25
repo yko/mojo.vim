@@ -9,7 +9,8 @@ Designed to highlight syntax of both html.ep and html.epl formats.
 
 INSTALLATION
 
-Save this files into your ~/.vim/ directory.
+        make test
+        make install
 
 CONFIGURATION
 
