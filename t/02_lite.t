@@ -16,9 +16,10 @@ my $hl = Text::VimColor->new(
     filetype               => 'perl',
     vim_let                => {mojo_highlight_data => "1"},
     vim_options            => [
-        qw(-RXZ -i NONE -u NONE -U NONE -N -n),    # for performance
-        '+set nomodeline',                         # for performance
-        "+set runtimepath^=$FindBin::Bin/..",      # Prepend test to runtime
+        qw(-RXZ -i NONE -u NONE -U NONE -N -n),     # for performance
+        '+set nomodeline',                          # for performance
+        "+set runtimepath+=$FindBin::Bin/../after", # Append test 'after' to runtime
+        "+set runtimepath^=$FindBin::Bin/..",       # Prepend test to runtime
     ],
 );
 
