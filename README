@@ -20,7 +20,7 @@ Configurations variables:
     :let mojo_highlight_data = 1
 
 Highlight embedded Perl code in __DATA__ sections of your Perl files.
-    
+
     :let mojo_disable_html = 1
 
 Don't highlight html inside __DATA__ templates - Perl code only.
