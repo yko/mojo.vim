@@ -16,6 +16,10 @@
 " For highlight templates in __DATA__ add following line to your .vimrc:
 " let mojo_highlight_data = 1
 
+if !exists("mojo_highlight_data") 
+    finish
+endif
+
 if !exists("b:current_syntax")
   echoerr "MojolisiousTemplate can only be included in existing syntax"
   finish
