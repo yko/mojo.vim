@@ -39,8 +39,11 @@ endif
 " Set up hl of filename headers
 syn match MojoFileNameStart "@@" contained
 
-syn region MojoFileContainer start=/@@/ end=/@@/me=s-1 contains=@Epl,@Html,MojoFileName keepend fold
+syn region MojoFileContainer start=/@@/ end=/@@/me=s-1 contains=@Epl,@Html,MojoFileName contained keepend fold
 syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart contained keepend
+
+" Push Template sections and HTML syntax into @perlDATA cluster
+syn cluster perlDATA add=@Html,MojoFileContainer
 
 " Revert current syntax name
 let b:current_syntax = cs
