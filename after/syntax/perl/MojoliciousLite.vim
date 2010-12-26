@@ -2,7 +2,7 @@
 " html w/ Perl as a preprocessor in __DATA__
 " Language:    Mojo epl templates stored in Perl __DATA__
 " Maintainer:  yko <ykorshak@gmail.com>
-" Version:     0.03
+" Version:     0.04
 " Last Change: 2010 Dec 26
 " Location:    http://github.com/yko/mojo.vim
 "

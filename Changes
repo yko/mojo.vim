@@ -1,5 +1,7 @@
 Revision history for mojo.vim
 
+0.04_0   Sun Dec 26 13:15:29 2010
+
 0.03_0   Sun Dec 26 12:11:33 2010
          Tests for Mojolicous:Lite syntax
          Mojolicious::Lite syntax loading much more organic now
