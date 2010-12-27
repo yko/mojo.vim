@@ -2,7 +2,7 @@
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
 " version:     0.04
-" Last Change: 2010 Dec 26
+" Last Change: 2010 Dec 27
 " Location:    http://github.com/yko/mojo.vim
 " Original version: vti <vti@cpan.org>
 

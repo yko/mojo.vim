@@ -1,9 +1,10 @@
 Revision history for mojo.vim
 
-0.04_0   Sun Dec 26 13:15:29 2010
+0.04_0   Mon Dec 27 10:49:02 2010
+         Highlight for default and tag helpers
 
 0.03_0   Sun Dec 26 12:11:33 2010
-         Tests for Mojolicous:Lite syntax
+         Tests for Mojolicous::Lite syntax
          Mojolicious::Lite syntax loading much more organic now
          Improved tests
          Better configuration: only variables in .vimrc
