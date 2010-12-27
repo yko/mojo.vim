@@ -36,7 +36,6 @@ syn cluster Mojo contains=MojoStart,MojoEnd
 syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
 syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
 
-
 if !exists("mojo_no_helpers")
 
     " Default helpers
@@ -53,10 +52,11 @@ syn cluster htmlPreproc add=PerlInside
 
 command -nargs=+ HiLink hi def link <args>
 
-HiLink MojoStart perlType
-HiLink MojoEnd perlType
-HiLink MojoFileName perlString
-HiLink MojoFileNameStart perlSpecial
+HiLink MojoStart                perlType
+HiLink MojoEnd                  perlType
+HiLink MojoFileName             perlString
+HiLink MojoFileNameStart        perlSpecial
+HiLink MojoError                Error
 
 delcommand HiLink
 
