@@ -6,7 +6,7 @@ use File::Spec::Functions qw<catfile catdir>;
 use Test::VimSyntax;
 use File::Temp;
 
-plan tests => 16;
+plan tests => 17;
 
 use FindBin;
 
@@ -190,4 +190,15 @@ syntax_ok(
         ['type',      '%>'],
     ],
     'helper "text_area"'
+);
+
+highlighter->vim_let('mojo_no_helpers' => 1);
+
+syntax_ok(
+    "<%= text_area 'foo' %>",
+    [   ['type',      '<%='],
+        ['constant', "'foo'"],
+        ['type',      '%>'],
+    ],
+    'disabled tags'
 );

@@ -36,11 +36,16 @@ syn cluster Mojo contains=MojoStart,MojoEnd
 syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
 syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
 
-" Default helpers
-syn match perlStatementFiledesc  "\<\%(app\|content\|content_for\|dumper\|extends\|flash\|include\|layout\|memorize\|param\|session\|stash\|url_for\)\>" nextgroup=perlGenericBlock skipwhite contained
 
-" Tag helpers
-syn match perlStatementFiledesc  "\<\%(base_tag\|check_box\|file_field\|form_for\|hidden_field\|input_tag\|javascript\|link_to\|password_field\|radio_button\|select_field\|stylesheet\|submit_button\|tag\|text_area\|text_field\)\>" nextgroup=perlGenericBlock skipwhite contained
+if !exists("mojo_no_helpers")
+
+    " Default helpers
+    syn match perlStatementFiledesc  "\<\%(app\|content\|content_for\|dumper\|extends\|flash\|include\|layout\|memorize\|param\|session\|stash\|url_for\)\>" nextgroup=perlGenericBlock skipwhite contained
+
+    " Tag helpers
+    syn match perlStatementFiledesc  "\<\%(base_tag\|check_box\|file_field\|form_for\|hidden_field\|input_tag\|javascript\|link_to\|password_field\|radio_button\|select_field\|stylesheet\|submit_button\|tag\|text_area\|text_field\)\>" nextgroup=perlGenericBlock skipwhite contained
+
+endif
 
 " Display code blocks in tag parameters' quoted value like 
 " <a href="<%= url_for 'foo' %>'>
