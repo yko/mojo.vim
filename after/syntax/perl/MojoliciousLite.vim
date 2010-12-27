@@ -29,12 +29,12 @@ endif
 let cs = b:current_syntax
 unlet b:current_syntax
 
-syntax include @Epl syntax/epl.vim
-
 if !exists("mojo_disable_html")
   unlet! b:current_syntax
   syn include @Html syntax/html.vim
 endif
+
+syntax include @Epl syntax/epl.vim
 
 " Set up hl of filename headers
 syn match MojoFileNameStart "@@" contained
