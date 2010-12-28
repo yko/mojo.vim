@@ -1,8 +1,9 @@
 Revision history for mojo.vim
 
-0.04_0   Mon Dec 27 15:31:27 2010
+0.04_0   Tue Dec 28 17:21:07 2010
          Highlight for default and tag helpers
          Fixed including order
+         New title helper
 
 0.03_0   Sun Dec 26 12:11:33 2010
          Tests for Mojolicous::Lite syntax
