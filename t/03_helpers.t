@@ -6,7 +6,7 @@ use File::Spec::Functions qw<catfile catdir>;
 use Test::VimSyntax;
 use File::Temp;
 
-plan tests => 13;
+plan tests => 14;
 
 use FindBin;
 
@@ -145,6 +145,16 @@ syntax_ok(
         ['type',      '%>'],
     ],
     'helper "url_for"'
+);
+
+syntax_ok(
+    "<%= title 'foo' %>",
+    [   ['type',      '<%='],
+        ['statement', 'title'],
+        ['constant',  "'foo'"],
+        ['type',      '%>'],
+    ],
+    'helper "title"'
 );
 
 highlighter->vim_let('mojo_no_helpers' => 1);
