@@ -6,7 +6,7 @@ use File::Spec::Functions qw<catfile catdir>;
 use Test::VimSyntax;
 use File::Temp;
 
-plan tests => 2;
+plan tests => 3;
 
 use FindBin;
 
@@ -58,6 +58,22 @@ syntax_ok(
         ['identifier', ' />'],
         ['type',       '<%'],
         ['type',       '%>']
+    ],
+    'Simple html'
+);
+
+syntax_ok(
+    "__DATA__\n@@ index.html\n<%= %>\n__END__\n=head1 NAME\nTest name\n=cut",
+    [   ['comment'   => '__DATA__'],
+        ['special'   => '@@'],
+        ['constant'  => ' index.html'],
+        ['type'      => '<%='],
+        ['type'      => '%>'],
+        ['comment'   => '__END__'],
+        ['statement' => '=head1'],
+        ['constant'  => 'NAME'],
+        ['comment'   => 'Test name'],
+        ['constant'  => '=cut']
     ],
     'Simple html'
 );

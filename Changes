@@ -4,6 +4,7 @@ Revision history for mojo.vim
          Highlight for default and tag helpers
          Fixed including order
          New title helper
+         Fixed __END__ in Lite (und3f)
 
 0.03_0   Sun Dec 26 12:11:33 2010
          Tests for Mojolicous::Lite syntax

@@ -39,7 +39,7 @@ syntax include @Epl syntax/epl.vim
 " Set up hl of filename headers
 syn match MojoFileNameStart "@@" contained
 
-syn region MojoFileContainer start=/@@/ end=/@@/me=s-1 contains=@Epl,@Html,MojoFileName contained keepend fold
+syn region MojoFileContainer start=/@@/ end=/^__END__\|@@/me=s-1 contains=@Epl,@Html,MojoFileName contained keepend fold
 syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart contained keepend
 
 " Push Template sections and HTML syntax into @perlDATA cluster
