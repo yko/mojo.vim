@@ -2,7 +2,7 @@
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
 " version:     0.04
-" Last Change: 2010 Dec 27
+" Last Change: 2011 Feb 11
 " Location:    http://github.com/yko/mojo.vim
 " Original version: vti <vti@cpan.org>
 
@@ -21,7 +21,7 @@ syntax include @Perl syntax/perl.vim
 syn cluster Perl remove=perlFunctionName,perlElseIfError
 
 if exists("b:bfold")
-    perl_fold = b:bfold
+    let perl_fold = b:bfold
     unlet b:bfold
 endif
 
