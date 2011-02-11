@@ -20,4 +20,4 @@ symlinks: dirs
 	ln -sf $(PWD)/after/syntax/perl/MojoliciousLite.vim    $(AFTER)
 
 test:
-	prove -rv t
+	prove -rl t

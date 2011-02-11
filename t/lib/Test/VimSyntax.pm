@@ -1,11 +1,15 @@
 package Test::VimSyntax;
 use strict;
 use warnings;
-use Text::VimColor;
-use Mojo::DOM;
 use Test::More;
+use Mojo::DOM;
+eval 'use Text::VimColor';
+if ($@) {
+    plan skip_all => 'Text::VimColor required for this test';
+}
 
-die "Test::Builder 0.94 or higher required!" if $Test::More::VERSION <= 0.94;
+plan skip_all => "Test::Simple 0.94 or higher required for this test"
+  if $Test::More::VERSION < 0.94;
 
 use base 'Test::Builder::Module';
 
