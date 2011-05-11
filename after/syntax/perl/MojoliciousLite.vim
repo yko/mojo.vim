@@ -3,7 +3,7 @@
 " Language:    Mojo epl templates stored in Perl __DATA__
 " Maintainer:  yko <ykorshak@gmail.com>
 " Version:     0.04
-" Last Change: 2010 Dec 27
+" Last Change: 2011 Feb 11
 " Location:    http://github.com/yko/mojo.vim
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax

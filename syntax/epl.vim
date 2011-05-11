@@ -27,14 +27,14 @@ endif
 
 " Begin and end of code blocks
 syn match MojoStart /<%=\{0,2}/ contained
-syn match MojoStart /^\s*%=\{0,2}/  contained
+syn match MojoSingleStart /^\s*%=\{0,2}/  contained
 syn match MojoEnd /=\{0,1}%>/ contained
 
 syn cluster Mojo contains=MojoStart,MojoEnd
 
 " Highlight code blocks
-syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s skip=+".*%>.*"+ end=+=\{0,1}%>+ contains=@Mojo,@Perl
-syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=@Mojo,@Perl
+syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s end=+=\{0,1}%>+he=s-1,me=s-1 contains=MojoStart,@Perl nextgroup=MojoEnd
+syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=MojoSingleStart,@Perl
 
 if !exists("mojo_no_helpers")
 
@@ -42,7 +42,7 @@ if !exists("mojo_no_helpers")
     syn match perlStatementFiledesc  "\<\%(app\|content\|content_for\|dumper\|extends\|flash\|include\|layout\|memorize\|param\|session\|stash\|url_for\|title\)\>" nextgroup=perlGenericBlock skipwhite contained
 
     " Tag helpers
-    syn match perlStatementFiledesc  "\<\%(base_tag\|check_box\|file_field\|form_for\|hidden_field\|input_tag\|javascript\|link_to\|password_field\|radio_button\|select_field\|stylesheet\|submit_button\|tag\|text_area\|text_field\)\>" nextgroup=perlGenericBlock skipwhite contained
+    syn match perlStatementFiledesc "\<\%(base_tag\|check_box\|file_field\|form_for\|hidden_field\|input_tag\|javascript\|link_to\|password_field\|radio_button\|select_field\|stylesheet\|submit_button\|tag\|text_area\|text_field\)\>" nextgroup=perlGenericBlock skipwhite contained
 
 endif
 
@@ -53,6 +53,7 @@ syn cluster htmlPreproc add=PerlInside
 command -nargs=+ HiLink hi def link <args>
 
 HiLink MojoStart                perlType
+HiLink MojoSingleStart          perlType
 HiLink MojoEnd                  perlType
 HiLink MojoFileName             perlString
 HiLink MojoFileNameStart        perlSpecial
