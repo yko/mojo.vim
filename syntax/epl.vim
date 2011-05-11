@@ -44,6 +44,10 @@ if !exists("mojo_no_helpers")
     " Tag helpers
     syn match perlStatementFiledesc "\<\%(base_tag\|check_box\|file_field\|form_for\|hidden_field\|input_tag\|javascript\|link_to\|password_field\|radio_button\|select_field\|stylesheet\|submit_button\|tag\|text_area\|text_field\)\>" nextgroup=perlGenericBlock skipwhite contained
 
+    " JavaScript
+    syn region javaScript start="<%=\{1,2}\s\+javascript\s\+.*begin\s\+%>" end="<%\s\+end\s\+=\{0,1}%>" contains=@htmlJavaScript,PerlInside transparent keepend 
+    syn region javaScript start="\s*%=\{1,2}\s\+javascript\s\+.*begin\s*$" end="%\s\+end" contains=@htmlJavaScript,PerlInside transparent keepend
+
 endif
 
 " Display code blocks in tag parameters' quoted value like 
