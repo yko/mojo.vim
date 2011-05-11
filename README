@@ -29,6 +29,11 @@ Don't highlight html inside __DATA__ templates - Perl code only.
 
 Don't highlight default and tag helpers.
 
+OPTIONAL DEPENDENCIES
+
+Once snipMate.vim installed autocomplete for helpers and template blocks became available.
+See http://www.vim.org/scripts/script.php?script_id=2540 and snippets/epl.snippets for details.
+
 CREDITS
 
 Viacheslav Tykhanovskyi, the greatest - co-founding and optimization
