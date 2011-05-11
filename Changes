@@ -1,7 +1,8 @@
 Revision history for mojo.vim
 
-0.04_0   Fri Feb 11 07:15:03 2011
+0.04_0   Wed May 11 21:22:38 2011
 
+         Snippets!
          Highlight for default and tag helpers
          Fixed including order
          New title helper
