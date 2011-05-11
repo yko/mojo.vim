@@ -1,7 +1,8 @@
 Revision history for mojo.vim
 
-0.04_0   Wed May 11 21:30:02 2011
+0.04_0   Wed May 11 21:46:32 2011
 
+         Highlight CSS inside of <%= stylesheet %> block
          Highlight JavaScript inside of <%= script %> block
          Snippets!
          Highlight for default and tag helpers

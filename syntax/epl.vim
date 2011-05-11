@@ -2,7 +2,7 @@
 " Language:    Perl + html
 " Maintainer:  yko <ykorshak@gmail.com>
 " version:     0.04
-" Last Change: 2011 Feb 11
+" Last Change: 2011 May 12
 " Location:    http://github.com/yko/mojo.vim
 " Original version: vti <vti@cpan.org>
 
@@ -45,8 +45,12 @@ if !exists("mojo_no_helpers")
     syn match perlStatementFiledesc "\<\%(base_tag\|check_box\|file_field\|form_for\|hidden_field\|input_tag\|javascript\|link_to\|password_field\|radio_button\|select_field\|stylesheet\|submit_button\|tag\|text_area\|text_field\)\>" nextgroup=perlGenericBlock skipwhite contained
 
     " JavaScript
-    syn region javaScript start="<%=\{1,2}\s\+javascript\s\+.*begin\s\+%>" end="<%\s\+end\s\+=\{0,1}%>" contains=@htmlJavaScript,PerlInside transparent keepend 
+    syn region javaScript start="<%=\{1,2}\s\+javascript\s\+.*begin\s\+%>" end="<%\s\+end\s\+=\{0,1}%>" contains=@htmlJavaScript,PerlInside transparent keepend
     syn region javaScript start="\s*%=\{1,2}\s\+javascript\s\+.*begin\s*$" end="%\s\+end" contains=@htmlJavaScript,PerlInside transparent keepend
+
+    " Style
+    syn region CSS start="<%=\{1,2}\s\+stylesheet\s\+.*begin\s\+%>" end="<%\s\+end\s\+=\{0,1}%>" contains=@htmlCss,PerlInside transparent keepend
+    syn region CSS start="%=\{1,2}\s\+stylesheet\s\+.*begin\s*$" end="%\s\+end" contains=@htmlCss,PerlInside transparent keepend
 
 endif
 
