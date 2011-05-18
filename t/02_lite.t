@@ -71,9 +71,9 @@ syntax_ok(
         ['type'      => '%>'],
         ['comment'   => '__END__'],
         ['statement' => '=head1'],
-        ['constant'  => 'NAME'],
+        ['constant'  => ' NAME'],
         ['comment'   => 'Test name'],
-        ['constant'  => '=cut']
+        ['statement' => '=cut']
     ],
     'Simple html'
 );
