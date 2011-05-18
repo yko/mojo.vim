@@ -56,7 +56,10 @@ sub syntax_ok {
                 my $c = shift @$children;
                 is( $c->tree->[1],
                     'syn:' . $el->[0],
-                    'Syntax name "' . $el->[0] . '"'
+                    'Syntax name "'
+                      . $el->[0]
+                      . '" for string "'
+                      . $c->text . '"'
                 );
                 is($c->text, $el->[1], 'Text "' . $c->text . '" matched');
             }
