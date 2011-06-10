@@ -40,7 +40,8 @@ snippet pass
 	<%= password_field '${1}' %>
 # Submit
 snippet su
-	<%= submit_button value => '${1}' %>
+	<%= submit_button ${1}%>
+	${2}
 # URL
 snippet url
 	<%= url_for '${1}' %>
