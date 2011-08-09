@@ -1,9 +1,9 @@
 " Vim syntax file (for including only)
 " html w/ Perl as a preprocessor in __DATA__
 " Language:    Mojo epl templates stored in Perl __DATA__
-" Maintainer:  yko <ykorshak@gmail.com>
+" Maintainer:  yko <yko@cpan.org>
 " Version:     0.04
-" Last Change: 2011 May 12
+" Last Change: 2011 Aug 09
 " Location:    http://github.com/yko/mojo.vim
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
@@ -16,7 +16,7 @@
 " For highlight templates in __DATA__ add following line to your .vimrc:
 " let mojo_highlight_data = 1
 
-if !exists("mojo_highlight_data") 
+if !exists("mojo_highlight_data")
     finish
 endif
 

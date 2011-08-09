@@ -1,5 +1,7 @@
 Revision history for mojo.vim
 
+0.04     Tue Aug 09 20:51:39 2011
+
 0.04_0   Wed May 11 21:46:32 2011
 
          Highlight CSS inside of <%= stylesheet %> block

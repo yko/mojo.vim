@@ -1,8 +1,8 @@
 " html w/ Perl as a preprocessor
 " Language:    Perl + html
-" Maintainer:  yko <ykorshak@gmail.com>
-" version:     0.04
-" Last Change: 2011 May 12
+" Maintainer:  yko <yko@cpan.org>
+" Version:     0.04
+" Last Change: 2011 Aug 09
 " Location:    http://github.com/yko/mojo.vim
 " Original version: vti <vti@cpan.org>
 
