@@ -5,7 +5,7 @@ use File::Spec::Functions qw<catfile catdir>;
 
 use Test::VimSyntax;
 
-plan tests => 8;
+plan tests => 9;
 
 use FindBin;
 
@@ -125,4 +125,14 @@ syntax_ok(
         ['constant',   '1'],
     ],
     'Conditional block'
+);
+
+syntax_ok(
+    "    <%= 'Hello, '\n . 'world' %>  ",
+    [   ['type',       '<%='],
+        ['constant',  "'Hello, '"],
+        ['constant',   "'world'"],
+        ['type',       '%>'],
+    ],
+    'Multiline block'
 );
