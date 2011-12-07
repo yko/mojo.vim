@@ -33,8 +33,8 @@ syn match MojoEnd /=\{0,1}%>/ contained
 syn cluster Mojo contains=MojoStart,MojoEnd
 
 " Highlight code blocks
-syn region PerlInside keepend oneline start=+<%=\{0,2}+hs=s end=+=\{0,1}%>+he=s-1,me=s-1 contains=MojoStart,@Perl nextgroup=MojoEnd
-syn region PerlInside keepend oneline start=+^\s*%=\{0,2}+hs=s end=+$+ contains=MojoSingleStart,@Perl
+syn region PerlInside keepend start=+<%=\{0,2}+hs=s end=+=\{0,1}%>+he=s-1,me=s-1 contains=MojoStart,@Perl nextgroup=MojoEnd
+syn region PerlInside keepend start=+^\s*%=\{0,2}+hs=s end=+$+ contains=MojoSingleStart,@Perl
 
 if !exists("mojo_no_helpers")
 
