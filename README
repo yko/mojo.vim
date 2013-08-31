@@ -10,7 +10,6 @@ Also you can allow syntax highliting for __DATA__ section of Perl files.
 
 INSTALLATION
 
-    make test
     make install
 
 CONFIGURATION
@@ -33,6 +32,10 @@ OPTIONAL DEPENDENCIES
 
 Once snipMate.vim installed autocomplete for helpers and template blocks became available.
 See http://www.vim.org/scripts/script.php?script_id=2540 and snippets/epl.snippets for details.
+
+Text::VimColor is required to run optional development purposes tests:
+
+    make test
 
 CREDITS
 
