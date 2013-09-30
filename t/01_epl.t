@@ -42,7 +42,7 @@ syntax_ok(
     '<a href="<%= 1 %>"></a>',
     [   ['identifier',   '<'],
         ['statement',    'a'],
-        ['identifier',    ''],
+        ['identifier',    ' '],
         ['type',      'href'],
         ['identifier',   '='],
         ['constant',     '"'],

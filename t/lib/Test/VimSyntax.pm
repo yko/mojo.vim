@@ -59,9 +59,9 @@ sub syntax_ok {
                     'Syntax name "'
                       . $el->[0]
                       . '" for string "'
-                      . $c->text . '"'
+                      . $c->text(0) . '"'
                 );
-                is($c->text, $el->[1], 'Text "' . $c->text . '" matched');
+                is($c->text(0), $el->[1], 'Text "' . $c->text(0) . '" matched');
             }
         }
 
