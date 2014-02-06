@@ -5,6 +5,7 @@
 " Version:     0.04
 " Last Change: 2011 May 12
 " Location:    http://github.com/yko/mojo.vim
+" License:     Artistic 2.0
 "
 " Thanks to Viacheslav Tykhanovskyi for simplified region syntax
 "

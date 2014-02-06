@@ -1,7 +1,8 @@
 Revision history for mojo.vim
 
-0.05_0   Sun Sep 01 10:26:23 2013
+0.05_0   Thu Feb 06 05:55:36 2014
          Support multiline code blocks
+         Now under Artistic 2.0 license
 
 0.04_0   Wed May 11 21:46:32 2011
          Highlight CSS inside of <%= stylesheet %> block
