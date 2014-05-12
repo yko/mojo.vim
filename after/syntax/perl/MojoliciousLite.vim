@@ -43,8 +43,8 @@ syn match MojoFileNameStart "@@" contained
 syn region MojoFileContainer start=/@@/ end=/^__END__\|@@/me=s-1 contains=@Epl,@Html,MojoFileName contained keepend fold
 syn region MojoFileName start=/@@/ end="$" keepend contains=MojoFileNameStart contained keepend
 
-" Push Template sections and HTML syntax into @perlDATA cluster
-syn cluster perlDATA add=@Html,MojoFileContainer
+" Mark __DATA__ section content as html.epl files collection
+syn region perlMojoDATA start="^__DATA__$" skip="." end="."  contains=@Html,MojoFileContainer
 
 " Revert current syntax name
 let b:current_syntax = cs

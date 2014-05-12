@@ -29,7 +29,6 @@ syntax_ok(
     "print 1;\n__DATA__\n@@ index.html\n<html><%= print 1; %></html>",
     [   ['statement',  'print'],
         ['constant',   '1'],
-        ['comment',    '__DATA__'],
         ['special',    '@@'],
         ['constant',   ' index.html'],
         ['identifier', '<'],
@@ -48,7 +47,7 @@ syntax_ok(
 
 syntax_ok(
     "__DATA__\n@@ index.html\n<%= %> test <br /> <% %>",
-    [   ['comment',    '__DATA__'],
+    [
         ['special',    '@@'],
         ['constant',   ' index.html'],
         ['type',       '<%='],
@@ -64,16 +63,11 @@ syntax_ok(
 
 syntax_ok(
     "__DATA__\n@@ index.html\n<%= %>\n__END__\n=head1 NAME\nTest name\n=cut",
-    [   ['comment'   => '__DATA__'],
+    [
         ['special'   => '@@'],
         ['constant'  => ' index.html'],
         ['type'      => '<%='],
-        ['type'      => '%>'],
-        ['comment'   => '__END__'],
-        ['statement' => '=head1'],
-        ['constant'  => ' NAME'],
-        ['comment'   => 'Test name'],
-        ['statement' => '=cut']
+        ['type'      => '%>']
     ],
     'Simple html'
 );
