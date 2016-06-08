@@ -19,7 +19,7 @@ unlet! b:current_syntax
 syntax include @Perl syntax/perl.vim
 
 " This groups are broken when included
-syn cluster Perl remove=perlFunctionName,perlElseIfError
+syn cluster Perl remove=perlFunctionName,perlElseIfError,perlBraces
 
 if exists("b:bfold")
     let perl_fold = b:bfold
@@ -27,15 +27,11 @@ if exists("b:bfold")
 endif
 
 " Begin and end of code blocks
-syn match MojoStart /<%=\{0,2}/ contained
-syn match MojoSingleStart /^\s*%=\{0,2}/  contained
-syn match MojoEnd /=\{0,1}%>/ contained
-
 syn cluster Mojo contains=MojoStart,MojoEnd
 
 " Highlight code blocks
-syn region PerlInside keepend start=+<%=\{0,2}+hs=s end=+=\{0,1}%>+he=s-1,me=s-1 contains=MojoStart,@Perl nextgroup=MojoEnd
-syn region PerlInside keepend start=+^\s*%=\{0,2}+hs=s end=+$+ contains=MojoSingleStart,@Perl
+syn region PerlInside keepend matchgroup=MojoStart start=+<%=\{0,2}+ matchgroup=MojoEnd end=+=\{0,1}%>+ contains=@Perl
+syn region PerlInside keepend matchgroup=MojoSingleStart start=+^\s*%=\{0,2}+ end=+$+ contains=@Perl
 
 if !exists("mojo_no_helpers")
 
