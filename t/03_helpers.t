@@ -108,10 +108,10 @@ syntax_ok(
     "<%= memorize begin %>Foo bar<% end %>",
     [   ['type',      '<%='],
         ['statement', 'memorize'],
-        ['preproc', "begin"],
+        ['preproc', "begin "],
         ['type',      '%>'],
         ['type',      '<%'],
-        ['preproc', "end"],
+        ['preproc', "end "],
         ['type',      '%>'],
     ],
     'helper "memorize"'

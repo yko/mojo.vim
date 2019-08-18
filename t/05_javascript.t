@@ -26,11 +26,11 @@ syntax_ok(
     "<%= javascript begin %>var x = y;<% end %>",
     [   ['type',       '<%='],
         ['statement',  'javascript'],
-        ['preproc',    'begin'],
+        ['preproc',    'begin '],
         ['type',       '%>'],
         ['identifier', 'var'],
         ['type',       '<%'],
-        ['preproc',    'end'],
+        ['preproc',    'end '],
         ['type',       '%>'],
     ],
     'simple syntax'

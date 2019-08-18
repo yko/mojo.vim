@@ -60,10 +60,10 @@ syntax_ok(
         ['constant',  'login'],
         ['constant',  'method'],
         ['constant',  "'post'"],
-        ['preproc', "begin"],
+        ['preproc', "begin "],
         ['type',      '%>'],
         ['type',      '<%'],
-        ['preproc', "end"],
+        ['preproc', "end "],
         ['type',      '%>'],
     ],
     'helper "form_for"'

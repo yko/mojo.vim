@@ -26,7 +26,7 @@ syntax_ok(
     "<%= stylesheet begin %>div#x { border: 1px }<% end %>",
     [   ['type',       '<%='],
         ['statement',  'stylesheet'],
-        ['preproc',    'begin'],
+        ['preproc',    'begin '],
         ['type',       '%>'],
         ['statement',  'div'],
         ['identifier', '#x'],
@@ -35,7 +35,7 @@ syntax_ok(
         ['constant',   '1px'],
         ['identifier', '}'],
         ['type',       '<%'],
-        ['preproc',    'end'],
+        ['preproc',    'end '],
         ['type',       '%>'],
     ],
     'simple syntax'

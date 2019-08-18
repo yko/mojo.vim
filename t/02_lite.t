@@ -70,10 +70,9 @@ syntax_ok(
         ['type'      => '<%='],
         ['type'      => '%>'],
         ['comment'   => '__END__'],
-        ['statement' => '=head1'],
-        ['constant'  => ' NAME'],
+        ['comment' => '=head1 NAME'],
         ['comment'   => 'Test name'],
-        ['statement' => '=cut']
+        ['comment' => '=cut']
     ],
     'Simple html'
 );
