@@ -17,7 +17,7 @@ install: dirs
 	cp snippets/epl.snippets    $(SNIPPETS)
 
 symlinks: dirs
-	ln -sf $(PWD)/ftdetect/epl.vim  $(FTPLUGIN)
+	ln -sf $(PWD)/ftdetect/epl.vim  $(FTDETECT)
 	ln -sf $(PWD)/syntax/epl.vim    $(SYNTAX)
 	ln -sf $(PWD)/after/syntax/perl/MojoliciousLite.vim    $(AFTER)
 	ln -sf $(PWD)/snippets/epl.snippets    $(SNIPPETS)
